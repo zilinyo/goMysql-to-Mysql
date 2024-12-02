@@ -1,0 +1,32 @@
+# mysql配置
+addr:
+user:
+pass:
+charset: utf8
+slave_id: 9991
+flavor: mysql
+position: mysql-bin.001012 41467215
+#prometheus相关配置
+enable_exporter: true
+exporter_addr: 9595
+#目标类型
+target: mysql
+#mongodb连接配置
+mysql_addrs: 127.0.0.1
+mysql_port: 3306
+mysql_username: root
+mysql_password: 123123
+enable_web_admin: true #是否启用web admin，默认false
+web_admin_port: 8060 #web监控端口,默认8060
+#并发协（线）程数量
+#maxprocs CPU核数*2
+#  批处理数量
+bulk_size: 800
+rule:
+  -
+    schema: develop_card
+    table: test_table
+    order_by_column: id
+    mysql_database: card6
+    includeRows: true
+    includeDDL: true
